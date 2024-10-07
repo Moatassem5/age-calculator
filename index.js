@@ -46,6 +46,7 @@ submitBtn.addEventListener("click", function (e) {
     ) {
       ErrorAll();
     } else {
+      submitBtn.style.backgroundColor = 'hsl(0, 0%, 8%)'
       // Calculate differences
       let outputYear = currentYear - yearValue;
       let outputMonth = currentMonth - monthValue;
