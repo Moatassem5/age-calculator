@@ -1,4 +1,3 @@
-
 # Frontend Mentor - Age calculator app
 
   
@@ -7,7 +6,19 @@
 
   
 
-**The website is responsive for all devices 😊** 
+**The website is responsive for all devices 😊**
+<br>
+
+**🌟 Features:**
+
+  
+
+-  **Calculates age based on user input**
+
+-  **Validates input for accuracy**
+
+-  **User-friendly interface**
+  
 
 ##  [ challenge link](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q)
 
