@@ -16,9 +16,9 @@ submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
     // Get input values
-    const dayValue = Math.abs(parseInt(document.getElementById("DAY").value));
-    const monthValue = Math.abs(parseInt(document.getElementById("MONTH").value)) - 1; // month is 0-indexed
-    const yearValue = Math.abs(parseInt(document.getElementById("YEAR").value));
+    const dayValue = parseInt(document.getElementById("DAY").value);
+    const monthValue = parseInt(document.getElementById("MONTH").value) - 1; // month is 0-indexed
+    const yearValue = parseInt(document.getElementById("YEAR").value);
 
     let hasError = false;
 
@@ -34,7 +34,7 @@ submitBtn.addEventListener("click", function (e) {
     }
 
     // Validate day
-    if (!dayValue || dayValue < 1 || dayValue > 31) {
+    if (dayValue < 0 || dayValue > 31) {
         hasError = true;
         document.getElementById("DAY").style.borderColor = "hsl(0, 100%, 67%)";
         document.querySelector(".label-Day").style.color = "hsl(0, 100%, 67%)";
@@ -42,12 +42,7 @@ submitBtn.addEventListener("click", function (e) {
     }
 
     // Validate month
-    if (!monthValue && monthValue !== 0) { // Allow 0 for valid month input
-        hasError = true;
-        document.getElementById("MONTH").style.borderColor = "hsl(0, 100%, 67%)";
-        document.querySelector(".label-Month").style.color = "hsl(0, 100%, 67%)";
-        document.getElementById("errorMonth").style.display = "block"; // Show month error
-    } else if (monthValue < 0 || monthValue > 11) {
+    if (monthValue < 0 || monthValue > 11) {
         hasError = true;
         document.getElementById("MONTH").style.borderColor = "hsl(0, 100%, 67%)";
         document.querySelector(".label-Month").style.color = "hsl(0, 100%, 67%)";
@@ -55,7 +50,7 @@ submitBtn.addEventListener("click", function (e) {
     }
 
     // Validate year
-    if (!yearValue) {
+    if (yearValue < 0) {
         hasError = true;
         document.getElementById("YEAR").style.borderColor = "hsl(0, 100%, 67%)";
         document.querySelector(".label-Year").style.color = "hsl(0, 100%, 67%)";
